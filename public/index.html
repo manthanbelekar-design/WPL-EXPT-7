@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application - Exp 7</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Title Header -->
+        <header class="header">
+            <h1>🎓 Student Registration & CRUD System</h1>
+            <p>Experiment No. 7: Node.js + Express.js + MongoDB</p>
+        </header>
+
+        <!-- Message Alert Banner -->
+        <div id="alertBox" class="alert hidden"></div>
+
+        <!-- Section 1: Simple Student Form -->
+        <section class="card">
+            <h2 id="formTitle">Add New Student</h2>
+            <form id="studentForm">
+                <input type="hidden" id="studentId">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="rollNo">Roll Number:</label>
+                        <input type="text" id="rollNo" placeholder="e.g. 21CS101" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Student Name:</label>
+                        <input type="text" id="name" placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" placeholder="e.g. rahul@college.edu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="branch">Branch:</label>
+                        <select id="branch" required>
+                            <option value="">-- Select Branch --</option>
+                            <option value="Computer Engineering">Computer Engineering</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Artificial Intelligence & Data Science">AI & Data Science</option>
+                            <option value="Electronics & Telecommunication">EXTC</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semester">Semester:</label>
+                        <select id="semester" required>
+                            <option value="">-- Select Semester --</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cgpa">CGPA (0 to 10):</label>
+                        <input type="number" id="cgpa" step="0.01" min="0" max="10" placeholder="e.g. 8.75" required>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" id="saveBtn" class="btn btn-save">Add Student</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-cancel hidden">Cancel Edit</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section 2: Simple Search & Filter (Demonstrating MongoDB Queries) -->
+        <section class="card filter-card">
+            <h3>🔍 Search / Filter Students (MongoDB Query)</h3>
+            <div class="filter-row">
+                <input type="number" id="filterCgpa" step="0.1" placeholder="Min CGPA ($gte)...">
+                <select id="filterBranch">
+                    <option value="">All Branches</option>
+                    <option value="Computer Engineering">Computer Engineering</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Artificial Intelligence & Data Science">AI & Data Science</option>
+                    <option value="Electronics & Telecommunication">EXTC</option>
+                </select>
+                <button type="button" id="applyFilterBtn" class="btn btn-filter">Filter</button>
+                <button type="button" id="resetFilterBtn" class="btn btn-secondary">Show All</button>
+            </div>
+            <p class="query-note" id="queryNote">Query: <code>db.students.find({})</code></p>
+        </section>
+
+        <!-- Section 3: Student Records Table -->
+        <section class="card">
+            <div class="table-header">
+                <h2>📋 Student Records in MongoDB (<span id="countDisplay">0</span>)</h2>
+            </div>
+
+            <table class="simple-table">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Branch</th>
+                        <th>Sem</th>
+                        <th>CGPA</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <tr>
+                        <td colspan="7" class="text-center">Loading students...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

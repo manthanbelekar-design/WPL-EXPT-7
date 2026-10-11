@@ -1,0 +1,224 @@
+/* Simple & Clean CSS for College Lab Project */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.header p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.card h2, .card h3 {
+    margin-bottom: 15px;
+    color: #1e293b;
+    font-size: 1.2rem;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #475569;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Buttons */
+.btn-group {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-save {
+    background-color: #16a34a;
+    color: white;
+}
+.btn-save:hover {
+    background-color: #15803d;
+}
+
+.btn-cancel {
+    background-color: #64748b;
+    color: white;
+}
+
+.btn-filter {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.btn-edit {
+    background-color: #0284c7;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.btn-delete {
+    background-color: #dc2626;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+/* Filter Row */
+.filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-row input, .filter-row select {
+    flex: 1;
+    min-width: 150px;
+}
+
+.query-note {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.query-note code {
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #0f172a;
+    font-weight: bold;
+}
+
+/* Table */
+.simple-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.simple-table th, .simple-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.simple-table th {
+    background-color: #f8fafc;
+    color: #475569;
+}
+
+.simple-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.text-center {
+    text-align: center;
+    color: #64748b;
+}
+
+/* Alert Banner */
+.alert {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.alert.success {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.alert.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.hidden {
+    display: none;
+}
